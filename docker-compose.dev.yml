@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  api:
+    build:
+      context: .
+      target: prod
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - ${PORT}:8081
+    command: npm run dev

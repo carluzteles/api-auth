@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  api:
+    build:
+      context: .
+      target: prod
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:8081
