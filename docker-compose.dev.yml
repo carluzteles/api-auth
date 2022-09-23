@@ -4,7 +4,7 @@ services:
   api:
     build:
       context: .
-      target: prod
+      target: dev
     restart: always
     env_file:
       - .env

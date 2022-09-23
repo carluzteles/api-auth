@@ -3,6 +3,8 @@ import App from "./src/app";
 
 import { PORT } from "./src/config/defaults.config";
 
-const app = new App(express(), +PORT)
+import { AuthController } from "./src/controller/Auth.controller";
+
+const app = new App([new AuthController()], express(), +PORT)
 
 app.initApp()
