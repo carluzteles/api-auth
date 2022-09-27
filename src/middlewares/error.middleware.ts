@@ -1,6 +1,6 @@
 import { NextFunction, Response, Request } from "express";
 
-import { HttpException } from "../utils/HttpException.utils";
+import HttpException from "../utils/HttpException.utils";
 
 export const errorMiddleware = (error: HttpException, req: Request, res: Response, next: NextFunction) => {
   const status = error.status || 400
