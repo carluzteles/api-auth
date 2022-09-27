@@ -2,11 +2,13 @@ version: '3.4'
 
 services:
   api:
+    container_name: api
     build:
       context: .
       target: prod
-    restart: always
     env_file:
       - .env
     ports:
-      - ${PORT}:8081
+      - ${PORT}:${PORT}
+    environment:
+      - MONGODB_CONNSTRING=mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_DATABASE}.sskrw.mongodb.net/?retryWrites=true&w=majority

@@ -24,3 +24,4 @@ RUN npm ci --only=production
 COPY --from=dev /usr/src/app/dist ./dist
 
 CMD [ "node", "dist/index.js" ]
+
